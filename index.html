@@ -1337,7 +1337,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             document.getElementById(`node-details-${nodeName}`).classList.remove('hidden');
         }
 
-        // 27 CASES DATABASE (3 cases per 9 folders)
+        // 27 CASES DATABASE (3 cases per 9 folders) - NOW WITH 4 OPTIONS EACH
         const folderDatabase = {
             allowist: [
                 {
@@ -1346,343 +1346,369 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                     options: [
                         { opt: "A", text: "Aceita o valor, afinal é uma doação voluntária para a cidade e ele só quer jogar." },
                         { opt: "B", text: "Nega o Pix de forma educada, mas aprova o Whitelist dele mesmo assim para não causar atritos." },
-                        { opt: "C", text: "Recusa imediatamente o valor, faz um print completo de toda a conversa no privado, encaminha para a diretoria de Staff e bane o usuário do Discord por tentativa de corrupção." }
+                        { opt: "C", text: "Recusa imediatamente o valor, faz um print completo de toda a conversa no privado, encaminha para a diretoria de Staff e bane o usuário do Discord por tentativa de corrupção." },
+                        { opt: "D", text: "Diz que vai pensar sobre isso e bloqueia o jogador sem responder." }
                     ],
                     correctOpt: "C",
-                    feedbackCorrect: "✅ Excelente! Conduta íntegra. Qualquer tentativa de suborno OOC mina a isonomia da cidade e exige banimento imediato e sem direito a revisão.",
-                    feedbackIncorrect: "❌ Incorreto! Aceitar subornos ou burlar processos destrói por completo a integridade moral da equipe de Staff do Fronteira RP."
+                    feedbackCorrect: "✅ Excelente! Conduta íntegra. Qualquer tentativa de suborno OOC mina a isonomia da cidade e exige banimento imediato.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é C. Aceitar subornos destrói a integridade moral da equipe de Staff."
                 },
                 {
                     title: "Caso 2: Streamer Famoso sem Whitelist",
-                    question: "Um influenciador/streamer famoso com mais de 30 mil seguidores quer entrar na cidade para fazer live hoje, mas se recusa a fazer a Whitelist regulamentar, alegando que trará visibilidade ao servidor e as regras não se aplicam a ele. O que você faz?",
+                    question: "Um influenciador/streamer famoso com mais de 30 mil seguidores quer entrar na cidade para fazer live, mas se recusa a fazer a Whitelist regulamentar. O que você faz?",
                     options: [
-                        { opt: "A", text: "Aprova-o imediatamente na base do 'clout' (influência), pois a visibilidade de marketing compensa quebrar o protocolo." },
-                        { opt: "B", text: "Informa-o pacientemente que todos, sem exceção, passam pelo processo básico de Whitelist para garantir o alinhamento das regras da cidade. Oferece ajuda para agendar um teste de forma rápida e cordial." },
-                        { opt: "C", text: "Bloqueia e bane o streamer de todas as redes imediatamente por arrogância OOC." }
+                        { opt: "A", text: "Aprova-o imediatamente pois a visibilidade compensa quebrar protocolo." },
+                        { opt: "B", text: "Informa-o pacientemente que todos, sem exceção, passam pelo processo básico de Whitelist. Oferece ajuda para agendar um teste rápido e cordial." },
+                        { opt: "C", text: "Bloqueia e bane o streamer de todas as redes imediatamente." },
+                        { opt: "D", text: "Deixa ele entrar por 1 dia para 'testar' e depois cobra Whitelist." }
                     ],
                     correctOpt: "B",
-                    feedbackCorrect: "✅ Correto! As regras são iguais para todos, independentemente de ser VIP, streamer ou doador. Tratar com educação mas manter as diretrizes garante a seriedade do Fronteira RP.",
-                    feedbackIncorrect: "❌ Incorreto! Favorecer streamers famosos destrói a moral e gera revolta na comunidade comum que teve que se esforçar no processo de entrada."
+                    feedbackCorrect: "✅ Correto! As regras são iguais para todos. Educação mantém as diretrizes.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Favorecer streamers destrói a integridade da cidade."
                 },
                 {
                     title: "Caso 3: Cola na Entrevista de Whitelist",
-                    question: "Durante a entrevista por voz de Whitelist, você percebe claramente que o candidato está lendo as respostas prontas de uma folha colada ou de um guia de regras de outro site. O que você faz?",
+                    question: "Durante a entrevista por voz de Whitelist, você percebe que o candidato está lendo as respostas prontas de uma folha colada. O que você faz?",
                     options: [
-                        { opt: "A", text: "Ignora e aprova-o, afinal ele se deu ao trabalho de buscar as respostas corretas." },
-                        { opt: "B", text: "Interrompe e faz perguntas complementares com cenários práticos e interpretativos que não estão no manual para avaliar se ele realmente compreendeu as regras gerais. Se não souber responder, reprova-o de forma educativa." },
-                        { opt: "C", text: "Bane-o imediatamente de toda a comunidade por fraude sem dar explicação." }
+                        { opt: "A", text: "Ignora e aprova-o, afinal ele buscou as respostas corretas." },
+                        { opt: "B", text: "Interrompe e faz perguntas complementares com cenários práticos para avaliar se ele realmente compreendeu. Se não souber, reprova-o de forma educativa." },
+                        { opt: "C", text: "Bane-o imediatamente de toda a comunidade por fraude sem explicação." },
+                        { opt: "D", text: "Avisa dele que notou mas deixa continuar lendo mesmo assim." }
                     ],
                     correctOpt: "B",
-                    feedbackCorrect: "✅ Perfeito! Testar a interpretação real e prática de cenários impede a entrada de players tóxicos ou que apenas decoraram o regulamento sem real intenção de praticá-lo.",
-                    feedbackIncorrect: "❌ Incorreto! Apenas ignorar permite a entrada de players sem instrução real de RP, enquanto banir sumariamente sem averiguação é rígido demais."
+                    feedbackCorrect: "✅ Perfeito! Testar interpretação real previne entrada de players tóxicos.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Apenas ignorar permite entrada sem instrução real."
                 }
             ],
             eventos: [
                 {
                     title: "Caso 1: Caminhão de Lixo no Drift",
-                    question: "Durante um evento oficial de Drift organizado pela prefeitura, um jogador insatisfeito por ter sido eliminado entra na pista com um caminhão de lixo e começa a colidir propositadamente contra os concorrentes. O que fazer?",
+                    question: "Durante um evento oficial de Drift, um jogador insatisfeito entra na pista com um caminhão de lixo colidindo contra concorrentes. O que fazer?",
                     options: [
-                        { opt: "A", text: "Deleta o veículo do jogador com comandos administrativos (/dv) e o avisa para não fazer de novo pelo chat geral OOC." },
-                        { opt: "B", text: "Congela o player, puxa-o para suporte privado Discord OOC, aplica banimento temporário por VDM (Vehicle Deathmatch) e comportamento anti-fairplay." },
-                        { opt: "C", text: "Atira no player de forma invisível usando armas administrativas como punição instantânea IC." }
+                        { opt: "A", text: "Deleta o veículo e avisa para não fazer de novo pelo chat." },
+                        { opt: "B", text: "Congela o player, puxa para suporte OOC, aplica ban temporário por VDM e comportamento anti-fairplay." },
+                        { opt: "C", text: "Atira no player invisível com armas administrativas como punição." },
+                        { opt: "D", text: "Deixa continuar pois faz parte da dinâmica do evento." }
                     ],
                     correctOpt: "B",
-                    feedbackCorrect: "✅ Correto! Atrapalhar eventos oficiais de forma intencional constitui quebra severa de fairplay e VDM. O suporte OOC garante a punição técnica pedagógica.",
-                    feedbackIncorrect: "❌ Incorreto! Usar armas de forma oculta é antiprofissional. Apenas deletar o carro sem punição encoraja o player a cometer novos tumultos."
+                    feedbackCorrect: "✅ Correto! Suporte OOC garante a punição técnica pedagógica adequada.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Usar armas ocultas é antiprofissional."
                 },
                 {
                     title: "Caso 2: Spawn de Itens sem Permissão",
-                    question: "Durante a execução de um evento de corrida, você percebe que um moderador júnior começou a spawnar (gerar) carros esportivos raros e armas pesadas para amigos de facção dele que estão assistindo o evento. O que fazer?",
+                    question: "Um moderador júnior spawna carros esportivos e armas para amigos durante um evento. O que fazer?",
                     options: [
-                        { opt: "A", text: "Bane o moderador júnior e os seus amigos imediatamente de forma definitiva de todos os canais." },
-                        { opt: "B", text: "Registra em vídeo, remove as ferramentas administrativas do moderador júnior e encaminha o caso diretamente para a Diretoria/Fundadores com as provas para desligamento e punição exemplar por abuso de poder." },
-                        { opt: "C", text: "Deleta os carros gerados e diz para ele fazer isso em uma área isolada do mapa para ninguém ver." }
+                        { opt: "A", text: "Bane moderador e amigos definitivamente de todos os canais." },
+                        { opt: "B", text: "Registra em vídeo, remove ferramentas do moderador, encaminha para Diretoria com provas para desligamento." },
+                        { opt: "C", text: "Deleta os itens e diz para fazer isso em área isolada." },
+                        { opt: "D", text: "Deixa passar pois o moderador tem permissões de admin." }
                     ],
                     correctOpt: "B",
-                    feedbackCorrect: "✅ Correto! Abuso de comandos administrativos para beneficiar terceiros IC destrói a isonomia da prefeitura. Deve ser reportado imediatamente aos fundadores.",
-                    feedbackIncorrect: "❌ Incorreto! Conivência com abuso de poder é inadmissível. Deletar os carros de forma velada apoia indiretamente a corrupção administrativa."
+                    feedbackCorrect: "✅ Correto! Abuso de poder administrativo deve ser reportado aos fundadores.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Conivência com abuso destrói isonomia."
                 },
                 {
                     title: "Caso 3: RDM no Fim do Evento",
-                    question: "No exato instante em que o evento de caça ao tesouro termina, vários jogadores começam a atirar uns nos outros sem motivo de simulação, alegando de forma OOC (Out of Character - Fora do Personagem) que o evento acabou e agora é zona liberada. Como intervir?",
+                    question: "Quando um evento termina, vários jogadores começam a atirar sem motivo RP. Como intervir?",
                     options: [
-                        { opt: "A", text: "Puxa todos os infratores identificados por logs e gravações de vídeo de segurança, e aplica advertência/ban por RDM (Random Deathmatch) de acordo com o regulamento. Deixa claro que o fim do evento não isenta as regras normais." },
-                        { opt: "B", text: "Deixa os jogadores lutarem, pois após eventos as regras normais de homicídio do servidor ficam temporariamente inativas." },
-                        { opt: "C", text: "Dá respawn (renascer) em todos e finge que nada aconteceu." }
+                        { opt: "A", text: "Puxa infratores, aplica advertência/ban por RDM de acordo com regulamento." },
+                        { opt: "B", text: "Deixa os jogadores lutarem, pois após eventos as regras ficam inativas." },
+                        { opt: "C", text: "Dá respawn em todos e finge que nada aconteceu." },
+                        { opt: "D", text: "Apenas faz um aviso no chat geral OOC." }
                     ],
                     correctOpt: "A",
-                    feedbackCorrect: "✅ Correto! As regras de RDM e amor à vida (Fear RP) valem 24 horas por dia em qualquer área que não seja arena PVP oficial.",
-                    feedbackIncorrect: "❌ Incorreto! Tolerância com RDM pós-evento cria um clima de desordem técnica e afasta jogadores sérios que valorizam simulação de vida."
+                    feedbackCorrect: "✅ Correto! RDM é proibido 24h em qualquer área.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é A. Fim do evento não isenta regras normais."
                 }
             ],
             discord: [
                 {
-                    title: "Caso 1: Ofensas Graves nos Memes",
-                    question: "Um jogador publica ofensas xenofóbicas e racistas em canais públicos de bate-papo OOC (Out of Character - Fora do Personagem) do Discord após perder uma ação militar contra um grupo rival. Como reagir?",
+                    title: "Caso 1: Ofensas Graves nos Canais",
+                    question: "Um jogador publica ofensas xenofóbicas e racistas em canais públicos após perder ação militar. Como reagir?",
                     options: [
-                        { opt: "A", text: "Deleta a mensagem e pede para ele debater em tom civilizado no chat." },
-                        { opt: "B", text: "Remove as mensagens tóxicas imediatamente, registra com capturas de tela e bane o usuário de forma definitiva do Discord e do jogo por preconceito e desrespeito OOC grave." },
-                        { opt: "C", text: "Bloqueia o canal de memes por 2 horas como punição coletiva para todo o servidor." }
+                        { opt: "A", text: "Deleta a mensagem e pede para debater de forma civilizada." },
+                        { opt: "B", text: "Remove mensagens, registra capturas, bane definitivamente por preconceito grave OOC." },
+                        { opt: "C", text: "Bloqueia o canal inteiro por 2 horas como punição coletiva." },
+                        { opt: "D", text: "Apenas manda msg privada alertando sobre o tom." }
                     ],
                     correctOpt: "B",
-                    feedbackCorrect: "✅ Correto! Discriminação, preconceito e assédio OOC são intoleráveis. Punição severa direta preserva o ambiente seguro e saudável da comunidade.",
-                    feedbackIncorrect: "❌ Incorreto! Tratamento suave contra discursos de ódio destrói a integridade moral da cidade e expõe a moderação a críticas."
+                    feedbackCorrect: "✅ Correto! Discriminação é intolerável. Preserva ambiente seguro.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Tratamento suave destrói integridade."
                 },
                 {
-                    title: "Caso 2: Divulgação de Outra Cidade via DM",
-                    question: "Vários membros da comunidade abrem tickets provando que um jogador está enviando convites e propagandas diretas no privado (DM) de outra cidade concorrente de FiveM. Como agir?",
+                    title: "Caso 2: Divulgação de Outra Cidade",
+                    question: "Vários membros abrem tickets provando que um jogador envia convites de outra cidade via DM. Como agir?",
                     options: [
-                        { opt: "A", text: "Bane o jogador do Discord por spam / divulgação de terceiros sem autorização, registrando as provas com clareza nos canais de auditoria interna." },
-                        { opt: "B", text: "Manda mensagem no chat geral pedindo para as pessoas bloquearem aquele usuário." },
-                        { opt: "C", text: "Ignora, afinal o que os jogadores fazem em mensagens privadas OOC não é de responsabilidade da prefeitura." }
+                        { opt: "A", text: "Bane por spam/divulgação sem autorização, registrando provas nos canais internos." },
+                        { opt: "B", text: "Manda msg no chat pedindo bloqueio." },
+                        { opt: "C", text: "Ignora, pois DMs privadas não são responsabilidade da prefeitura." },
+                        { opt: "D", text: "Avisa o jogador em privado para parar." }
                     ],
                     correctOpt: "A",
-                    feedbackCorrect: "✅ Correto! Divulgação invasiva via DM de membros do servidor é passível de banimento por quebra de segurança e ética comunitária.",
-                    feedbackIncorrect: "❌ Incorreto! A inércia da Staff permite o roubo ativo de membros da sua comunidade de forma irregular."
+                    feedbackCorrect: "✅ Correto! Divulgação invasiva é passível de banimento por quebra de segurança.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é A. Inércia permite roubo de membros."
                 },
                 {
-                    title: "Caso 3: Links Suspeitos / Golpes",
-                    question: "Um robô de spam invade o Discord e começa a postar links falsos prometendo 'Plano VIP gratuito'. Um usuário clica, perde o acesso ao Discord e abre um ticket reclamando com a equipe de Staff. Como proceder?",
+                    title: "Caso 3: Links Falsos/Golpes",
+                    question: "Um bot posta links falsos de 'VIP gratuito'. Um usuário clica e abre ticket. Como proceder?",
                     options: [
-                        { opt: "A", text: "Informa que a culpa foi exclusivamente dele por ter clicado e encerra o ticket de forma ríspida." },
-                        { opt: "B", text: "Bloqueia o bot infrator, deleta todos os links fraudulentos, orienta o usuário de forma atenciosa a redefinir senhas e ativa autenticação de dois fatores, publicando um aviso geral para toda a cidade não cair no golpe." },
-                        { opt: "C", text: "Bane o usuário do Discord por ter sido hackeado para evitar novos problemas." }
+                        { opt: "A", text: "Informa que a culpa foi dele por clicar e encerra ríspido." },
+                        { opt: "B", text: "Bloqueia bot, deleta links, orienta redefinição de senhas, publica aviso para todos." },
+                        { opt: "C", text: "Bane o usuário hackeado para evitar novos problemas." },
+                        { opt: "D", text: "Não faz nada e deixa o post no canal." }
                     ],
                     correctOpt: "B",
-                    feedbackCorrect: "✅ Correto! Acolhimento e instrução técnica no suporte demonstram o profissionalismo da Staff. Limpar os canais rapidamente evita novos incidentes.",
-                    feedbackIncorrect: "❌ Incorreto! Tratar a vítima com deboche afasta jogadores fiéis da comunidade."
+                    feedbackCorrect: "✅ Correto! Acolhimento demonstra profissionalismo e protege comunidade.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Deboche afasta jogadores fiéis."
                 }
             ],
             festival: [
                 {
                     title: "Caso 1: Poluição Sonora",
-                    question: "Durante um festival musical oficial do servidor na praia, um player liga um som extremamente alto (mic-spam/soundboard de gemidos ou ruídos estridentes) no chat de voz, atrapalhando a encenação IC de centenas de pessoas. O que fazer?",
+                    question: "Durante festival musical, um player liga som extremamente alto no chat de voz atrapalhando centenas. O que fazer?",
                     options: [
-                        { opt: "A", text: "Aplica ban permanente direto sem falar nada." },
-                        { opt: "B", text: "Puxa-o no invisível OOC, avisa de forma verbal clara. Se ele persistir de má-fé, aplica mute administrativo ou kick/ban temporário por poluição sonora e anti-fairplay." },
-                        { opt: "C", text: "Não intervém, pois festivais de música permitem gritos e qualquer barulho no jogo." }
+                        { opt: "A", text: "Aplica ban permanente direto." },
+                        { opt: "B", text: "Puxa invisível OOC, avisa verbalmente. Se insistir, applica mute/kick por poluição sonora." },
+                        { opt: "C", text: "Não intervém, pois festival permite qualquer barulho." },
+                        { opt: "D", text: "Apenas pede para aumentar o volume para que todos ouçam." }
                     ],
                     correctOpt: "B",
-                    feedbackCorrect: "✅ Correto! O aviso pedagógico prévio é a postura correta para infrações de comportamento em massa. Punições graduais se aplicam se houver reincidência intencional.",
-                    feedbackIncorrect: "❌ Incorreto! Banimentos permanentes diretos sem aviso para casos de poluição sonora sem aviso prévio são considerados excessivos."
+                    feedbackCorrect: "✅ Correto! Aviso pedagógico prévio é a postura adequada.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Banimentos diretos sem aviso são excessivos."
                 },
                 {
-                    title: "Caso 2: Sequestro na Safezone do Evento",
-                    question: "Dois mafiosos armados entram na área sinalizada do Festival e realizam o sequestro IC (In Character - Dentro do Personagem) de um comerciante para roubar as arrecadações da barraca dele. Como moderar?",
+                    title: "Caso 2: Sequestro na Safezone do Festival",
+                    question: "Dois armados sequestram comerciante na área sinalizada do Festival. Como moderar?",
                     options: [
-                        { opt: "A", text: "Interrompe a ação OOC no mesmo instante, pois o Festival foi decretado zona segura (Safezone) temporária. Explica a regra e aplica advertência por quebra de Safezone." },
-                        { opt: "B", text: "Deixa a ação ocorrer, pois sequestrar faz parte do roleplay de crimes normais da cidade." },
-                        { opt: "C", text: "Bane os sequestradores de forma definitiva sem dar direito de defesa." }
+                        { opt: "A", text: "Interrompe OOC pois Festival é Safezone. Adverte e explica a regra." },
+                        { opt: "B", text: "Deixa rolar pois sequestro faz parte do roleplay normal." },
+                        { opt: "C", text: "Bane os sequestradores definitivamente sem defesa." },
+                        { opt: "D", text: "Teletransporta o comerciante para lugar seguro." }
                     ],
                     correctOpt: "A",
-                    feedbackCorrect: "✅ Correto! Áreas de eventos públicos e festivais oficiais contam com proteção especial de Safezone para garantir a segurança comercial e recreativa dos cidadãos.",
-                    feedbackIncorrect: "❌ Incorreto! Permitir sequestros de má-fé em Safezones oficiais desconfigura a integridade de festivais coletivos."
+                    feedbackCorrect: "✅ Correto! Festas têm proteção especial de Safezone para segurança coletiva.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é A. Permitir quebra a integridade."
                 },
                 {
                     title: "Caso 3: Stream Snipe no Festival",
-                    question: "O DJ que está se apresentando na praia do festival é um streamer parceiro da cidade. Um player fica descobrindo a posição dele OOC e vai no festival xingá-lo com referências pessoais OOC do chat da live dele. Como reagir?",
+                    question: "Um player descobre posição do DJ streamer e vai xingá-lo com referências pessoais OOC. Como agir?",
                     options: [
-                        { opt: "A", text: "Ignora, afinal o festival é público e qualquer pessoa tem direito de ir e criticar o DJ." },
-                        { opt: "B", text: "Puxa o infrator OOC, colhe as gravações da live e logs e aplica punição rigorosa por Metagaming e assédio OOC (Stream Sniping), preservando a integridade das parcerias de publicidade." },
-                        { opt: "C", text: "Dá teleporte no DJ para outra praia vazia para ele tocar sem ser incomodado." }
+                        { opt: "A", text: "Ignora pois festival é público." },
+                        { opt: "B", text: "Puxa infrator, colhe gravações e aplica punição rigorosa por Stream Sniping e assédio." },
+                        { opt: "C", text: "Teleporta DJ para praia vazia." },
+                        { opt: "D", text: "Apenas avisa para ser mais educado." }
                     ],
                     correctOpt: "B",
-                    feedbackCorrect: "✅ Correto! Stream Sniping é uma infração grave que quebra a barreira entre OOC e IC, ferindo o fairplay e a ética do servidor.",
-                    feedbackIncorrect: "❌ Incorreto! Mudar o DJ de praia destrói o evento público e pune a vítima em vez do infrator real."
+                    feedbackCorrect: "✅ Correto! Stream Sniping quebra fairplay e ética do servidor.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Mudar DJ pune a vítima."
                 }
             ],
             acoes: [
                 {
                     title: "Caso 1: Voo Impossível sobre Prédio",
-                    question: "Durante a fuga de um assalto a banco, os assaltantes saltam com motos de uma encosta de montanha pousando direto no telhado de um prédio isolado onde o helicóptero da polícia não tem ângulo de pouso. O que fazer?",
+                    question: "Assaltantes saltam com motos de encosta para telhado isolado em fuga de banco. O que fazer?",
                     options: [
-                        { opt: "A", text: "Para a perseguição no ar e exige que eles voltem para a rua de forma imediata." },
-                        { opt: "B", text: "Permite a conclusão da ação IC para não quebrar o tiroteio ativo. Posteriormente, puxa as partes para suporte OOC, analisa as provas e pune por Powergaming (ações irrealistas)." },
-                        { opt: "C", text: "Não pune, pois considera uma manobra de muita habilidade mecânica." }
+                        { opt: "A", text: "Para a perseguição e exige que voltem para rua." },
+                        { opt: "B", text: "Permite conclusão da ação IC. Depois puxa para OOC, analisa e pune por Powergaming." },
+                        { opt: "C", text: "Não pune, pois considera manobra muito hábil." },
+                        { opt: "D", text: "Dá respawn instantâneo nos assaltantes." }
                     ],
                     correctOpt: "B",
-                    feedbackCorrect: "✅ Correto! Interromper ações policiais ativas gera quebra de imersão. A análise técnica pós-ação garante a punição adequada por Powergaming.",
-                    feedbackIncorrect: "❌ Incorreto! Tolerar saltos humanamente impossíveis desvirtua os padrões mínimos de realismo do Fronteira RP."
+                    feedbackCorrect: "✅ Correto! Análise pós-ação garante punição adequada.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Tolerar saltos impossíveis desvirtua realismo."
                 },
                 {
                     title: "Caso 2: Refém Amigo / Falso Refém",
-                    question: "Você investiga uma ação de roubo à joalheria e descobre que o 'refém' que os assaltantes estavam usando era na verdade um amigo de facção deles sem máscara, que aceitou participar do crime para facilitar a negociação de fuga com a polícia. Como proceder?",
+                    question: "Você descobre que 'refém' do assalto era amigo de facção combinado OOC. Como proceder?",
                     options: [
-                        { opt: "A", text: "Bane todos os envolvidos de forma definitiva por 'anti-RP'." },
-                        { opt: "B", text: "Anula os lucros obtidos na ação e aplica punição administrativa a todos por 'Falso Refém / Conluio', deixando claro que reféns devem ser cidadãos reais capturados sem combinação OOC prévia." },
-                        { opt: "C", text: "Apenas adverte verbalmente e deixa eles ficarem com o dinheiro roubado." }
+                        { opt: "A", text: "Bane todos por anti-RP." },
+                        { opt: "B", text: "Anula lucros e aplica punição a todos por 'Falso Refém', deixando claro que reféns devem ser cidadãos reais." },
+                        { opt: "C", text: "Apenas adverte verbalmente e deixa ficarem com dinheiro." },
+                        { opt: "D", text: "Libera os lucros e não faz nada." }
                     ],
                     correctOpt: "B",
-                    feedbackCorrect: "✅ Correto! O uso de falsos reféns quebra o fairplay fundamental do assalto contra as forças legais de segurança.",
-                    feedbackIncorrect: "❌ Incorreto! Permitir o lucro de ações fraudulentas combinadas OOC destrói a seriedade econômica da cidade."
+                    feedbackCorrect: "✅ Correto! Falso refém quebra fairplay fundamental do assalto.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Lucro de ações fraudulentas destrói economia."
                 },
                 {
                     title: "Caso 3: Roubo sem Negociação",
-                    question: "Um grupo de bandidos assalta um estabelecimento, e no momento em que a polícia chega para cercar o local e iniciar as negociações regulamentares de reféns, os bandidos simplesmente saem atirando sem falar nada, alegando que 'não gostam de negociar'. O que fazer?",
+                    question: "Bandidos assaltam estabelecimento. Quando polícia chega, eles saem atirando sem negociar, alegando que 'não gostam de negociar'. O que fazer?",
                     options: [
-                        { opt: "A", text: "Pune o grupo por ausência de amor à vida (Fear RP) e quebra do protocolo básico de negociação de ações da cidade, instruindo-os sobre as regras de roubos." },
-                        { opt: "B", text: "Deixa rolar, afinal atirar sem conversar faz parte de ações rápidas no FiveM." },
-                        { opt: "C", text: "Invalida a vida dos policiais envolvidos para equilibrar as forças." }
+                        { opt: "A", text: "Pune por ausência de Fear RP, instruindo sobre protocolo de negociação." },
+                        { opt: "B", text: "Deixa rolar pois atirar sem conversar faz parte de ações rápidas." },
+                        { opt: "C", text: "Invalida vidas dos policiais para equilibrar forças." },
+                        { opt: "D", text: "Apenas avisa no chat que deveriam ter negociado." }
                     ],
                     correctOpt: "A",
-                    feedbackCorrect: "✅ Correto! A negociação de reféns é obrigatória nas ações para garantir o desenvolvimento do cenário de simulação de ambos os lados.",
-                    feedbackIncorrect: "❌ Incorreto! Ações baseadas apenas em tiroteio sem diálogo empobrecem o nível do servidor, assemelhando-o a um mata-mata."
+                    feedbackCorrect: "✅ Correto! Negociação é obrigatória para garantir desenvolvimento do cenário.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é A. Ações sem diálogo empobrecem servidor."
                 }
             ],
             midias: [
                 {
-                    title: "Caso 1: Vazamento de Meta-Informações",
-                    question: "Um jogador assiste a live de uma facção no Discord OOC e descobre a localização do plantio de cocaína rival. Ele posta essa localização anonimamente na rede social IC (In Character - Dentro do Personagem) do jogo. Como punir?",
+                    title: "Caso 1: Vazamento Meta-Informações",
+                    question: "Jogador assiste live de facção, descobre plantio de cocaína rival e posta anonimamente na rede IC. Como punir?",
                     options: [
-                        { opt: "A", text: "Ignora o caso, pois a rede social do jogo aceita publicações anônimas." },
-                        { opt: "B", text: "Apaga a publicação e bane o jogador temporariamente/permanentemente do servidor por Metagaming e quebra de fairplay de informações." },
-                        { opt: "C", text: "Apenas aplica uma advertência verbal leve no Discord privado." }
+                        { opt: "A", text: "Ignora, pois rede social aceita publicações anônimas." },
+                        { opt: "B", text: "Apaga publicação e bane por Metagaming e quebra de fairplay." },
+                        { opt: "C", text: "Apenas aplica advertência verbal leve." },
+                        { opt: "D", text: "Dá prêmio ao jogador por inteligência investigativa." }
                     ],
                     correctOpt: "B",
-                    feedbackCorrect: "✅ Correto! Metagaming em mídias IC é infração séria e desestrutura o trabalho investigativo legítimo das facções concorrentes.",
-                    feedbackIncorrect: "❌ Incorreto! Tolerar vazamento de informações de lives (Stream Sniping) destrói as dinâmicas competitivas da cidade."
+                    feedbackCorrect: "✅ Correto! Metagaming em mídias IC desestrutura dinâmicas legítimas.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Tolerar vazamento destroi competitividade."
                 },
                 {
                     title: "Caso 2: Ameaças de Morte OOC nas Mídias",
-                    question: "Na aba de comentários de uma rede social IC, dois jogadores começam a debater e um deles publica: 'Eu sei onde você mora OOC, vou te pegar e te quebrar todo na vida real'. Como agir?",
+                    question: "Em comentários, jogador publica: 'Eu sei onde você mora OOC, vou te pegar'. Como agir?",
                     options: [
-                        { opt: "A", text: "Bane o autor do comentário imediatamente por ameaça à integridade física fora do jogo OOC e vazamento/assédio de dados pessoais (Doxxing)." },
-                        { opt: "B", text: "Deixa eles discutirem, pois é uma desavença puramente IC (Dentro do Personagem)." },
-                        { opt: "C", text: "Manda uma mensagem pedindo para eles pararem de brigar no chat público OOC." }
+                        { opt: "A", text: "Bane imediatamente por ameaça à integridade física e Doxxing." },
+                        { opt: "B", text: "Deixa eles discutirem pois é desavença IC." },
+                        { opt: "C", text: "Manda msg pedindo para pararem de brigar." },
+                        { opt: "D", text: "Deleta apenas a mensagem mas não bane." }
                     ],
                     correctOpt: "A",
-                    feedbackCorrect: "✅ Correto! Ameaças reais OOC ultrapassam qualquer limite de jogo. A Staff deve intervir imediatamente com tolerância zero e ban permanente.",
-                    feedbackIncorrect: "❌ Incorreto! Minimizar ameaças físicas reais fora do jogo expõe a comunidade a riscos de segurança física reais."
+                    feedbackCorrect: "✅ Correto! Ameaças reais OOC exigem tolerância zero e ban permanente.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é A. Minimizar ameaças expõe risco de segurança."
                 },
                 {
-                    title: "Caso 3: Anúncio de Venda de Contas (RMT)",
-                    question: "Um jogador cria um perfil falso na rede de mídias IC anunciando que vende o seu veículo superesportivo da cidade por 'R$ 150,00 via Pix'. Que regra foi violada e qual a punição?",
+                    title: "Caso 3: Venda de Conta por Dinheiro Real",
+                    question: "Jogador cria perfil falso anunciando venda de veículo por 'R$ 150 via Pix'. Que regra violou?",
                     options: [
-                        { opt: "A", text: "Venda de bens de simulação por dinheiro real OOC (RMT - Real Money Trading). Aplica-se banimento permanente de todos os envolvidos no ato de comércio." },
-                        { opt: "B", text: "Apenas deleta o post, pois comércio de bens do jogo é permitido se feito fora da prefeitura." },
-                        { opt: "C", text: "Nenhuma punição é aplicável se ele pagar uma taxa em moedas do jogo para a prefeitura." }
+                        { opt: "A", text: "RMT (Real Money Trading). Bane permanente de todos envolvidos." },
+                        { opt: "B", text: "Apenas deleta post, comércio de bens é permitido fora da prefeitura." },
+                        { opt: "C", text: "Nenhuma punição se ele pagar taxa em moedas do jogo." },
+                        { opt: "D", text: "Avisa apenas verbalmente para parar." }
                     ],
                     correctOpt: "A",
-                    feedbackCorrect: "✅ Correto! Comércio OOC de moedas ou veículos por dinheiro real destrói a economia e a integridade financeira do servidor.",
-                    feedbackIncorrect: "❌ Incorreto! O comércio de bens virtuais por moedas reais destrói o valor justo das conquistas legítimas de outros jogadores."
+                    feedbackCorrect: "✅ Correto! RMT destrói economia e integridade financeira do servidor.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é A. Comércio OOC por dinheiro real é proibido."
                 }
             ],
             orgs: [
                 {
                     title: "Caso 1: Excesso de Membros em Ação",
-                    question: "O regulamento limita invasões de territórios de facções a 8 integrantes por equipe. A facção atacante leva 11 membros armados para a favela rival e vence o confronto militar. Como agir no suporte?",
+                    question: "Regulamento limita invasões a 8 integrantes. Facção leva 11 e vence. Como agir?",
                     options: [
-                        { opt: "A", text: "Anula a invasão militar, devolve o território para a facção defensora e aplica uma advertência administrativa rigorosa à facção infratora (com perda de pontos ou suspensão)." },
-                        { opt: "B", text: "Bane os 3 integrantes que entraram a mais no meio do confronto ativo." },
-                        { opt: "C", text: "Ignora o caso, desde que os adversários não tenham aberto denúncia." }
+                        { opt: "A", text: "Anula invasão, devolve território, aplica advertência rigorosa e perda de pontos." },
+                        { opt: "B", text: "Bane os 3 membros extra no meio do confronto." },
+                        { opt: "C", text: "Ignora se adversários não abrirem denúncia." },
+                        { opt: "D", text: "Deixa como está pois ação já terminou." }
                     ],
                     correctOpt: "A",
-                    feedbackCorrect: "✅ Correto! Manter o equilíbrio numérico é fundamental para o fairplay das facções ilegais. Punições administrativas coletivas educam as organizações a seguirem as cotas.",
-                    feedbackIncorrect: "❌ Incorreto! Tolerar vantagens numéricas ilícitas quebra a confiança competitiva dos grupos de oposição na cidade."
+                    feedbackCorrect: "✅ Correto! Manter equilíbrio é fundamental para fairplay das facções.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é A. Tolerar vantagens quebra confiança competitiva."
                 },
                 {
-                    title: "Caso 2: Limpeza Maliciosa de Baús (Roubo)",
-                    question: "Um membro de gangue é rebaixado de cargo OOC por má conduta e, por vingança, aproveita as suas permissões ativas para esvaziar todo o baú (cofrinho de armas e drogas) da facção e depois sai da cidade. O que fazer?",
+                    title: "Caso 2: Roubo de Baú por Vingança",
+                    question: "Membro rebaixado por má conduta esvazia baú de facção e sai. O que fazer?",
                     options: [
-                        { opt: "A", text: "Deixa rolar, considerando que traições de cofrinhos de facção são ações permitidas IC." },
-                        { opt: "B", text: "Verifica os logs de saque, devolve os itens roubados para a facção lesada e bane o infrator de forma permanente por roubo malicioso de baú e comportamento anti-jogo." },
-                        { opt: "C", text: "Obriga o líder da facção a rastrear e matar o traidor dentro do jogo IC." }
+                        { opt: "A", text: "Deixa rolar, traições de cofrinhos são permitidas IC." },
+                        { opt: "B", text: "Verifica logs, devolve itens, bane permanentemente por roubo e comportamento anti-jogo." },
+                        { opt: "C", text: "Obriga líder a rastrear e matar o traidor IC." },
+                        { opt: "D", text: "Apenas adverte o membro infrator." }
                     ],
                     correctOpt: "B",
-                    feedbackCorrect: "✅ Correto! Limpar baús coletivos de facções ou corporações por motivos de vingança OOC constitui quebra direta de fairplay e é punido com ban definitivo.",
-                    feedbackIncorrect: "❌ Incorreto! Classificar esvaziamentos de baús por vingança OOC como traição IC incentiva comportamentos de sabotagem nocivos na cidade."
+                    feedbackCorrect: "✅ Correto! Limpar baús por vingança OOC é quebra de fairplay grave.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Esvaziamentos por vingança OOC são punidos com ban."
                 },
                 {
-                    title: "Caso 3: Aliança Proibida em Disputa de Área",
-                    question: "Durante uma tomada de território, duas facções menores fecham um acordo secreto OOC de se unirem militarmente para derrubar a facção principal que domina a área do morro. O regulamento proíbe alianças em disputas de facção. Como moderar?",
+                    title: "Caso 3: Aliança Proibida em Disputa",
+                    question: "Duas facções pequenas fecham acordo OOC para unir forças contra facção maior. Regulamento proíbe alianças. Como moderar?",
                     options: [
-                        { opt: "A", text: "Deixa as facções pequenas unirem forças para que as ações fiquem mais dinâmicas." },
-                        { opt: "B", text: "Reúne as provas em vídeo e logs de chat, anula a disputa, e penaliza os líderes de ambas as facções conspiradoras por desrespeitarem a regra de neutralidade." },
-                        { opt: "C", text: "Bane todos os integrantes de ambas as facções sem aviso." }
+                        { opt: "A", text: "Deixa unirem para deixar ações dinâmicas." },
+                        { opt: "B", text: "Reúne provas, anula disputa, penaliza líderes por desrespeitarem regra de neutralidade." },
+                        { opt: "C", text: "Apenas adverte sobre a regra." },
+                        { opt: "D", text: "Ignora pois é estratégia do jogo." }
                     ],
                     correctOpt: "B",
-                    feedbackCorrect: "✅ Correto! A neutralidade de lutas de território deve ser rígida. Alianças secretas quebram o equilíbrio planejado para as organizações da cidade.",
-                    feedbackIncorrect: "❌ Incorreto! Favorecer táticas irregulares de união desvaloriza o esforço técnico de facções que seguem as regras de combate."
+                    feedbackCorrect: "✅ Correto! Garantir isonomia em disputas mantém competição justa.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Alianças combinadas OOC quebram fairplay."
                 }
             ],
             legal: [
                 {
-                    title: "Caso 1: Direitos não lidos no Suporte",
-                    question: "Um oficial de polícia prende um infrator sem ler os seus direitos constitucionais e recusa-se a chamar um advogado de forma agressiva OOC no chat de voz. O jogador abre um ticket. Como proceder?",
+                    title: "Caso 1: Acusação Falsa por Doação",
+                    question: "VIP doa valor alto e acusa jogador de infração sem provas. Como proceder?",
                     options: [
-                        { opt: "A", text: "Liberta o suspeito de imediato usando comandos administrativos e suspende o policial." },
-                        { opt: "B", text: "Esclarece no ticket que a falta de leitura de direitos e a ausência do advogado são infrações que devem ser julgadas de forma IC pela Corregedoria de Polícia ou Juizado da cidade. Contudo, adverte o policial se for comprovada agressividade verbal OOC." },
-                        { opt: "C", text: "Informa que a polícia tem autoridade total para prender como quiser e fecha o ticket." }
+                        { opt: "A", text: "Bane acusado para satisfazer o VIP doador." },
+                        { opt: "B", text: "Explica com neutralidade que toda punição exige provas de vídeo, arquivando por falta de evidência." },
+                        { opt: "C", text: "Bane VIP por fazer denúncia sem provas." },
+                        { opt: "D", text: "Dá redução de sentença ao VIP como compensação." }
                     ],
                     correctOpt: "B",
-                    feedbackCorrect: "✅ Excelente! Separar problemas processuais de simulação IC (Corregedoria) das infrações de postura OOC (Staff) é o pilar de uma moderação madura.",
-                    feedbackIncorrect: "❌ Incorreto! Libertar o suspeito de forma administrativa anula a jurisdição do RP policial legítimo, enquanto ignorar ofensas OOC do policial é conivência com a toxicidade."
+                    feedbackCorrect: "✅ Correto! Isonomia absoluta. Regras valem para todos igualmente.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Favorecer VIPs gera imagem de corrupção."
                 },
                 {
-                    title: "Caso 2: Reconhecimento por Voz",
-                    question: "Um policial aborda um suspeito totalmente mascarado e com roupas genéricas, mas efetua a prisão baseando-se unicamente no fato de ter reconhecido a voz dele como o líder de uma facção rival do dia anterior. O que fazer?",
+                    title: "Caso 2: Atropelamento Forçado",
+                    question: "Denúncia mostra carro atropelando em calçada. Mas ao ver completo, vê que ele pulou intencionalmente. Como proceder?",
                     options: [
-                        { opt: "A", text: "Adverte o policial por Metagaming (reconhecer a voz de pessoas mascaradas sem provas físicas adicionais é proibido por descaracterizar a máscara)." },
-                        { opt: "B", text: "Deixa prender, afinal as vozes das pessoas no FiveM são fáceis de identificar." },
-                        { opt: "C", text: "Bane o policial do servidor por abuso de poder administrativo." }
+                        { opt: "A", text: "Bane motorista de qualquer forma." },
+                        { opt: "B", text: "Nega punição de VDM e adverte denunciante por tentar forçar infrações de terceiros." },
+                        { opt: "C", text: "Encerra ticket sem falar nada." },
+                        { opt: "D", text: "Bane ambos por má-fé." }
                     ],
-                    correctOpt: "A",
-                    feedbackCorrect: "✅ Correto! O uso de máscaras protege a identidade IC do personagem. O reconhecimento exclusivo de vozes mascaradas sem outras pistas físicas constitui Metagaming primário.",
-                    feedbackIncorrect: "❌ Incorreto! Permitir que policiais reconheçam qualquer player mascarado pela voz anula por completo o propósito mecânico de uso de máscaras."
+                    correctOpt: "B",
+                    feedbackCorrect: "✅ Correto! Identificar armadilhas demonstra olhar clínico da Staff.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Punir motorista favorece má-fé."
                 },
                 {
-                    title: "Caso 3: Negligência Médica",
-                    question: "Um socorrista médico recusa-se de forma proposital a reanimar um paciente desmaiado porque descobriu que ele pertence a uma facção criminosa rival de amigos dele, deixando o paciente perder a vida IC no local. Como agir?",
+                    title: "Caso 3: Spam de Tickets",
+                    question: "Jogador insatisfeito abre dezenas de tickets atrapalhando atendimento. Como agir?",
                     options: [
-                        { opt: "A", text: "Pune o socorrista por violação ética e desvio de funções profissionais (médicos prestam atendimento neutro obrigatório OOC/IC para resguardar todos)." },
-                        { opt: "B", text: "Ignora, afinal os médicos têm o direito de escolher a quem salvar dentro de suas escolhas de simulação." },
-                        { opt: "C", text: "Pune a facção do paciente por ter perdido a luta de rua." }
+                        { opt: "A", text: "Aplica timeout/mute por spam e alerta sobre canal de revisão." },
+                        { opt: "B", text: "Bane permanentemente do jogo e Discord de forma vitalícia." },
+                        { opt: "C", text: "Ignora e continua fechando tickets infinitamente." },
+                        { opt: "D", text: "Aumenta advertência dele por reclamação." }
                     ],
                     correctOpt: "A",
-                    feedbackCorrect: "✅ Correto! Corporações de saúde possuem o dever neutro de prestar socorro obrigatório de forma isenta para preservar o fluxo de simulação.",
-                    feedbackIncorrect: "❌ Incorreto! Permitir que médicos selecionem pacientes por inimizades de facção anula a imersão e prejudica a integridade técnica do Fronteira RP."
+                    feedbackCorrect: "✅ Correto! Mute educativo evita espera de outros e respeita canal de revisão.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é A. Ban imediato impede re-educação do usuário."
                 }
             ],
             tickets: [
                 {
-                    title: "Caso 1: O VIP Sem Provas",
-                    question: "Um jogador de plano VIP abre um ticket furioso contra outro cidadão exigindo ban por VDM (atropelamento). Ele não tem nenhuma gravação em vídeo, mas alega que por ser doador frequente e amigo do diretor, a palavra dele deve ser aceita como verdade. Como responder?",
+                    title: "Caso 1: Slow no Comando Admin",
+                    question: "Você descobre que um Helper está usando `/slow` em canais para atrasar mensagens de denúncias contra amigos. Como proceder?",
                     options: [
-                        { opt: "A", text: "Aplica banimento ao acusado para satisfazer o jogador doador financeiro." },
-                        { opt: "B", text: "Explica com cordialidade e neutralidade absoluta que todas as punições na cidade exigem provas de vídeo claras, independentemente de plano de doação ou amizades, arquivando o caso por falta de evidências." },
-                        { opt: "C", text: "Bane o VIP por fazer denúncias sem provas físicas em vídeo." }
+                        { opt: "A", text: "Deixa passar pois é apenas um slow." },
+                        { opt: "B", text: "Pega provas, registra abuso de poder, remove cargo e reporta para Diretoria por manipulação de moderação." },
+                        { opt: "C", text: "Avisa o Helper em privado para parar." },
+                        { opt: "D", text: "Revoga o comando /slow para todos." }
                     ],
                     correctOpt: "B",
-                    feedbackCorrect: "✅ Correto! O Fronteira RP mantém a isonomia absoluta. As regras de provas e regulamentos valem para todos os cidadãos de forma idêntica.",
-                    feedbackIncorrect: "❌ Incorreto! Favorecer VIPs descredibiliza a moderação e gera uma imagem de corrupção corporativa interna da Staff."
+                    feedbackCorrect: "✅ Correto! Abuso de poder administrativo deve ser documentado e reportado.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Manipulação de moderação prejudica integridade."
                 },
                 {
-                    title: "Caso 2: Atropelamento Forçado",
-                    question: "Um denunciante envia um clipe mostrando um carro atropelando-o em alta velocidade em cima de uma calçada. No entanto, ao analisar a gravação completa, você percebe que ele pulou intencionalmente na frente do veículo em movimento para forçar a infração de VDM do motorista. Como proceder?",
+                    title: "Caso 2: Negação de Suporte por Preferência",
+                    question: "Uma Staff nega atender ticket de jogador que ela odeia OOC, dizendo que está 'sobrecarregada' enquanto atende outros. Como proceder?",
                     options: [
-                        { opt: "A", text: "Bane o motorista do veículo de qualquer forma por não ter desviado dele." },
-                        { opt: "B", text: "Nega a punição de VDM contra o motorista e aplica advertência administrativa ao denunciante por tentativa de forçar infrações de terceiros e comportamento anti-fairplay." },
-                        { opt: "C", text: "Encerra o ticket sem falar nada para ambas as partes." }
+                        { opt: "A", text: "Deixa Staff agir livremente pois ela tem autonomia." },
+                        { opt: "B", text: "Recoloca ticket na fila, chama Staff para suporte privado, documenta conduta e aplica advertência por nepotismo negativo." },
+                        { opt: "C", text: "Bane o jogador por 'atrapalhar' a Staff." },
+                        { opt: "D", text: "Apenas pede para Staff fazer o atendimento depois." }
                     ],
                     correctOpt: "B",
-                    feedbackCorrect: "✅ Correto! Identificar armadilhas e tentativas de indução ao erro (forçar quebras de regras de terceiros) demonstra o olhar clínico da Staff.",
-                    feedbackIncorrect: "❌ Incorreto! Punir o motorista nesse cenário favorece a má-fé do denunciante que provocou o incidente."
+                    feedbackCorrect: "✅ Correto! Negar suporte por preferência pessoal destrói confiança comunitária.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Discriminação OOC em atendimento é grave."
                 },
                 {
-                    title: "Caso 3: Spam de Tickets",
-                    question: "Inconformado com uma advertência de 24 horas recebida legitimamente, um jogador começa a abrir dezenas de tickets consecutivos no Discord, floodando (lotando) os canais de atendimento e atrapalhando a equipe. Como agir?",
+                    title: "Caso 3: Triagem Falsa de Tickets",
+                    question: "Uma Support faz triagem de tickets mas apenas marca como 'fechados' sem realmente ler ou responder. Como agir?",
                     options: [
-                        { opt: "A", text: "Aplica um timeout/mute temporário no Discord do usuário por poluição de canais de suporte e spam de tickets, alertando-o de que reclamações legítimas devem ser feitas unicamente no canal de revisão de banimentos." },
-                        { opt: "B", text: "Aumenta o banimento dele para permanente do jogo e do Discord de forma vitalícia imediata." },
-                        { opt: "C", text: "Ignora e continua a fechar os tickets infinitamente sem nenhuma advertência." }
+                        { opt: "A", text: "Deixa passar pois tickets estão sendo 'fechados'." },
+                        { opt: "B", text: "Detecta comportamento preguiçoso, abre investigação sobre histórico de tickets e aplica corte de incentivo/remoção de cargo se confirmado." },
+                        { opt: "C", text: "Apenas avisa para ler os tickets." },
+                        { opt: "D", text: "Reabre todos os tickets que ela fechou." }
                     ],
-                    correctOpt: "A",
-                    feedbackCorrect: "✅ Correto! O canal de revisão de banimentos serve para contestações justas. O spam de tickets normais obstrui o andamento de atendimentos de outros cidadãos.",
-                    feedbackIncorrect: "❌ Incorreto! Tolerar spams exaure os mentores, enquanto aplicar ban permanente imediato impede chances de re-educação do usuário."
+                    correctOpt: "B",
+                    feedbackCorrect: "✅ Correto! Triagem falsa deixa jogadores sem atendimento legítimo.",
+                    feedbackIncorrect: "❌ Incorreto! A resposta correta é B. Negligência de atendimento prejudica comunidade."
                 }
             ]
         };
-
         let currentFolder = 'allowist';
         let currentCaseIdx = 0;
 
@@ -1726,7 +1752,8 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                 feedback.innerHTML = currentCaseObj.feedbackCorrect;
                 feedback.classList.add('bg-emerald-950/40', 'border-emerald-800/40', 'text-emerald-300');
             } else {
-                feedback.innerHTML = currentCaseObj.feedbackIncorrect;
+                const correctOption = currentCaseObj.options.find(o => o.opt === currentCaseObj.correctOpt);
+                feedback.innerHTML = `${currentCaseObj.feedbackIncorrect}<br/><br/><strong>Resposta Correta:</strong> ${correctOption.opt}) ${correctOption.text}`;
                 feedback.classList.add('bg-red-950/40', 'border-red-800/40', 'text-red-300');
             }
         }
@@ -1771,121 +1798,196 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             {
                 num: 1,
                 q: "Qual a definição correta de 'METAGAMING' no Roleplay?",
+                correct: "B",
+                feedbackCorrect: "✅ Excelente! Metagaming é usar informações OOC para vantagens IC.",
+                feedbackWrong: "❌ Incorreto! A resposta correta é: B) Utilizar informações obtidas OOC para obter vantagens ou realizar ações no IC.",
                 opts: [
-                    { val: "wrong", t: "A) Fazer manobras e ações de carro humanamente impossíveis que desafiem as leis da gravidade física." },
-                    { val: "correct", t: "B) Utilizar informações obtidas OOC (Out of Character - Fora do Personagem) (como lives de streamers ou conversas no Discord) para obter vantagens ou realizar ações no ambiente IC (In Character - Dentro do Personagem)." }
+                    { val: "A", t: "A) Fazer manobras e ações de carro humanamente impossíveis que desafiem as leis da gravidade física." },
+                    { val: "B", t: "B) Utilizar informações obtidas OOC (Out of Character - Fora do Personagem) (como lives de streamers ou conversas no Discord) para obter vantagens ou realizar ações no ambiente IC (In Character - Dentro do Personagem)." },
+                    { val: "C", t: "C) Participar de eventos especiais sem permissão prévia da Staff." },
+                    { val: "D", t: "D) Usar itens raros que não foram devidamente adquiridos no servidor." }
                 ]
             },
             {
                 num: 2,
                 q: "Um jogador capota seu carro esportivo, despenca de uma montanha, cai sobre as quatro rodas e continua dirigindo sem parar para simular dores ou avaria física do carro. Que regra foi violada?",
+                correct: "A",
+                feedbackCorrect: "✅ Perfeito! É Powergaming - ignorar limitações físicas/mecânicas da simulação.",
+                feedbackWrong: "❌ Incorreto! A resposta correta é: A) Powergaming (Ações irrealistas ou desconsideração deliberada das limitações mecânicas/físicas de simulação).",
                 opts: [
-                    { val: "correct", t: "A) Powergaming (Ações irrealistas ou desconsideração deliberada das limitações mecânicas/físicas de simulação)." },
-                    { val: "wrong", t: "B) VDM (Vehicle Deathmatch - Matar pessoas intencionalmente usando veículos)." }
+                    { val: "A", t: "A) Powergaming (Ações irrealistas ou desconsideração deliberada das limitações mecânicas/físicas de simulação)." },
+                    { val: "B", t: "B) VDM (Vehicle Deathmatch - Matar pessoas intencionalmente usando veículos)." },
+                    { val: "C", t: "C) RDM (combate aleatório sem motivo de roleplay)." },
+                    { val: "D", t: "D) Metagaming com mecânicas do jogo." }
                 ]
             },
             {
                 num: 3,
                 q: "O que estabelece de forma clara a regra de 'FEAR RP / AMOR À VIDA'?",
+                correct: "A",
+                feedbackCorrect: "✅ Correto! Fear RP é simular medo/pânico quando desarmado sob mira.",
+                feedbackWrong: "❌ Incorreto! A resposta correta é: A) Simular a reação biológica de pânico ou medo legítimo quando o seu personagem se encontra desarmado ou rendido sob a mira de armas letais carregadas.",
                 opts: [
-                    { val: "correct", t: "A) Simular a reação biológica de pânico ou medo legítimo quando o seu personagem se encontra desarmado ou rendido sob a mira de armas letais carregadas." },
-                    { val: "wrong", t: "B) O direito de reagir imediatamente contra assaltos se o seu personagem possuir plano VIP ou pertencer a facções criminosas." }
+                    { val: "A", t: "A) Simular a reação biológica de pânico ou medo legítimo quando o seu personagem se encontra desarmado ou rendido sob a mira de armas letais carregadas." },
+                    { val: "B", t: "B) O direito de reagir imediatamente contra assaltos se o seu personagem possuir plano VIP ou pertencer a facções criminosas." },
+                    { val: "C", t: "C) Apenas jogadores de corporações oficiais podem usar esta regra defensivamente." },
+                    { val: "D", t: "D) Medo é irrelevante em simulação se o jogador tem 100% de vida." }
                 ]
             },
             {
                 num: 4,
                 q: "Como deve ser realizada a utilização do comando de voo 'Noclip' pela Staff?",
+                correct: "B",
+                feedbackCorrect: "✅ Correto! Noclip é apenas para moderação, monitoramento e suporte - longe dos jogadores.",
+                feedbackWrong: "❌ Incorreto! A resposta correta é: B) Estritamente para fins de moderação técnica, monitorar eventos ou dar suporte rápido fora das vistas dos jogadores, para não atrapalhar a imersão IC.",
                 opts: [
-                    { val: "wrong", t: "A) Para voar de forma recreativa pela cidade e brincar/conversar no jogo com amigos íntimos OOC." },
-                    { val: "correct", t: "B) Estritamente para fins de moderação técnica, monitorar eventos ou dar suporte rápido fora das vistas dos jogadores, para não atrapalhar a imersão IC." }
+                    { val: "A", t: "A) Para voar de forma recreativa pela cidade e brincar/conversar no jogo com amigos íntimos OOC." },
+                    { val: "B", t: "B) Estritamente para fins de moderação técnica, monitorar eventos ou dar suporte rápido fora das vistas dos jogadores, para não atrapalhar a imersão IC." },
+                    { val: "C", t: "C) Para explorar o mapa e encontrar novos locais para conteúdo de live." },
+                    { val: "D", t: "D) Durante eventos públicos para manter ordem e aparecer para os players." }
                 ]
             },
             {
                 num: 5,
                 q: "O que constitui a infração de 'COMBAT LOGGING' no FiveM?",
+                correct: "A",
+                feedbackCorrect: "✅ Exato! Combat Logging é desconectar intencionalmente para evitar punições ativas.",
+                feedbackWrong: "❌ Incorreto! A resposta correta é: A) Desconectar intencionalmente do servidor para se esquivar de consequências ou punições ativas no jogo (prisão, assaltos, mortes ou perda de baús).",
                 opts: [
-                    { val: "correct", t: "A) Desconectar intencionalmente do servidor para se esquivar de consequências ou punições ativas no jogo (prisão, assaltos, mortes ou perda de baús)." },
-                    { val: "wrong", t: "B) Escrever ofensas contra moderadores nos canais públicos de texto OOC do Discord." }
+                    { val: "A", t: "A) Desconectar intencionalmente do servidor para se esquivar de consequências ou punições ativas no jogo (prisão, assaltos, mortes ou perda de baús)." },
+                    { val: "B", t: "B) Escrever ofensas contra moderadores nos canais públicos de texto OOC do Discord." },
+                    { val: "C", t: "C) Deixar o jogo sem avisar a facção antes de uma missão combinada." },
+                    { val: "D", t: "D) Desconectar após uma morte natural (acidente, queda, etc)." }
                 ]
             },
             {
                 num: 6,
                 q: "Qual a definição correta da regra de 'RDM (Random Deathmatch)'?",
+                correct: "A",
+                feedbackCorrect: "✅ Perfeito! RDM é matar sem motivo ou interação prévia de RP.",
+                feedbackWrong: "❌ Incorreto! A resposta correta é: A) Agredir gravemente ou abater outro personagem sem que tenha ocorrido qualquer interação de voz prévia ou motivo de RP justificável.",
                 opts: [
-                    { val: "correct", t: "A) Agredir gravemente ou abater outro personagem sem que tenha ocorrido qualquer interação de voz prévia ou motivo de RP justificável." },
-                    { val: "wrong", t: "B) Atropelar intencionalmente um grupo de pedestres usando caminhões de lixo." }
+                    { val: "A", t: "A) Agredir gravemente ou abater outro personagem sem que tenha ocorrido qualquer interação de voz prévia ou motivo de RP justificável." },
+                    { val: "B", t: "B) Atropelar intencionalmente um grupo de pedestres usando caminhões de lixo." },
+                    { val: "C", t: "C) Disparar armas em eventos por celebração ou diversão." },
+                    { val: "D", t: "D) Atirar em alguém que o provocou verbalmente sem contexto IC." }
                 ]
             },
             {
                 num: 7,
                 q: "O que se enquadra na infração de 'VDM (Vehicle Deathmatch)'?",
+                correct: "A",
+                feedbackCorrect: "✅ Correto! VDM é usar veículos como arma letal propositadamente.",
+                feedbackWrong: "❌ Incorreto! A resposta correta é: A) Utilizar qualquer veículo propositadamente como uma arma letal de atropelamento para eliminar outros oponentes.",
                 opts: [
-                    { val: "correct", t: "A) Utilizar qualquer veículo propositadamente como uma arma letal de atropelamento para eliminar outros oponentes." },
-                    { val: "wrong", t: "B) Fugir em alta velocidade de bloqueios ou barreiras montadas pela polícia local." }
+                    { val: "A", t: "A) Utilizar qualquer veículo propositadamente como uma arma letal de atropelamento para eliminar outros oponentes." },
+                    { val: "B", t: "B) Fugir em alta velocidade de bloqueios ou barreiras montadas pela polícia local." },
+                    { val: "C", t: "C) Atropelar acidentalmente um policial durante perseguição normal." },
+                    { val: "D", t: "D) Usar carros blindados para transportar criminosos fugidos." }
                 ]
             },
             {
                 num: 8,
                 q: "Durante um tiroteio contra rivais, um suspeito corre para dentro de sua garagem e guarda rapidamente todo o seu armamento pesado para evitar perdas ou apreensão. Que infração ocorreu?",
+                correct: "B",
+                feedbackCorrect: "✅ Excelente! É Combat Storing - guardar itens durante ação ativa para evitar perdas.",
+                feedbackWrong: "❌ Incorreto! A resposta correta é: B) Combat Storing (Guardar itens ou recursos no meio de uma ação ativa para evitar perdas ou apreensão).",
                 opts: [
-                    { val: "wrong", t: "A) Powergaming de recursos." },
-                    { val: "correct", t: "B) Combat Storing (Guardar itens ou recursos no meio de uma ação ativa para evitar perdas ou apreensão)." }
+                    { val: "A", t: "A) Powergaming de recursos." },
+                    { val: "B", t: "B) Combat Storing (Guardar itens ou recursos no meio de uma ação ativa para evitar perdas ou apreensão)." },
+                    { val: "C", t: "C) Metagaming com informações sobre a garagem." },
+                    { val: "D", t: "D) Usar garagens é permitido durante combate." }
                 ]
             },
             {
                 num: 9,
                 q: "O que significa 'COMBAT LOOTING' no servidor?",
+                correct: "A",
+                feedbackCorrect: "✅ Perfeito! Combat Looting é saquear/revistar durante confronto ativo.",
+                feedbackWrong: "❌ Incorreto! A resposta correta é: A) Saquear o corpo de jogadores abatidos ou revistar policiais enquanto o confronto armado ou tiroteio ainda está ativamente ocorrendo na área local.",
                 opts: [
-                    { val: "correct", t: "A) Saquear o corpo de jogadores abatidos ou revistar policiais enquanto o confronto armado ou tiroteio ainda está ativamente ocorrendo na área local." },
-                    { val: "wrong", t: "B) Comprar armas ilegais no meio de uma perseguição policial de alta velocidade." }
+                    { val: "A", t: "A) Saquear o corpo de jogadores abatidos ou revistar policiais enquanto o confronto armado ou tiroteio ainda está ativamente ocorrendo na área local." },
+                    { val: "B", t: "B) Comprar armas ilegais no meio de uma perseguição policial de alta velocidade." },
+                    { val: "C", t: "C) Looting é permitido após evento terminar." },
+                    { val: "D", t: "D) Apenas revistar criminosos, não policiais." }
                 ]
             },
             {
                 num: 10,
                 q: "Um jogador passa deliberadamente na frente do Departamento Policial buzinando sem parar e realizando manobras perigosas sem nenhum contexto de simulação apenas para forçar uma perseguição. Qual infração foi cometida?",
+                correct: "A",
+                feedbackCorrect: "✅ Correto! Cop Baiting é provocar segurança sem motivo de RP.",
+                feedbackWrong: "❌ Incorreto! A resposta correta é: A) Cop Baiting (Provocar deliberadamente as corporações de segurança sem qualquer profundidade ou motivo de RP para forçar perseguições).",
                 opts: [
-                    { val: "correct", t: "A) Cop Baiting (Provocar deliberadamente as corporações de segurança sem qualquer profundidade ou motivo de RP para forçar perseguições)." },
-                    { val: "wrong", t: "B) Metagaming com a viatura." }
+                    { val: "A", t: "A) Cop Baiting (Provocar deliberadamente as corporações de segurança sem qualquer profundidade ou motivo de RP para forçar perseguições)." },
+                    { val: "B", t: "B) Metagaming com a viatura." },
+                    { val: "C", t: "C) RDM contra policiais." },
+                    { val: "D", t: "D) Dirigir agressivamente perto de delegacia é permitido." }
                 ]
             },
             {
                 num: 11,
                 q: "Qual a postura ética correta de um Staff ao dar suporte para jogadores que são seus amigos pessoais no Discord OOC?",
+                correct: "A",
+                feedbackCorrect: "✅ Excelente! Staff deve manter neutralidade absoluta e isonomia em todas as decisões.",
+                feedbackWrong: "❌ Incorreto! A resposta correta é: A) Mantém neutralidade e distanciamento ético absoluto, julgando com base estritamente nas regras e provas do caso.",
                 opts: [
-                    { val: "correct", t: "A) Mantém neutralidade e distanciamento ético absoluto, julgando com base estritamente nas regras e provas do caso." },
-                    { val: "wrong", t: "B) Amenizar a advertência OOC ou relevar o caso alegando falta de evidências para evitar mal-estar pessoal." }
+                    { val: "A", t: "A) Mantém neutralidade e distanciamento ético absoluto, julgando com base estritamente nas regras e provas do caso." },
+                    { val: "B", t: "B) Amenizar a advertência OOC ou relevar o caso alegando falta de evidências para evitar mal-estar pessoal." },
+                    { val: "C", t: "C) Dar sentença mais leve para amigos é aceitável em casos leves." },
+                    { val: "D", t: "D) Amizade OOC justifica preferência em decisões IC." }
                 ]
             },
             {
                 num: 12,
                 q: "O que é uma 'ZONA SEGURA / SAFEZONE' no Fronteira RP?",
+                correct: "B",
+                feedbackCorrect: "✅ Correto! SafeZones são áreas onde violência/crimes são totalmente proibidos.",
+                feedbackWrong: "❌ Incorreto! A resposta correta é: B) Locais (como hospitais, praça central ou concessionárias) onde agressões, roubos, sequestros e assassinatos são totalmente proibidos para garantir a segurança dos jogadores.",
                 opts: [
-                    { val: "wrong", t: "A) Áreas do mapa onde a polícia pode atirar para matar criminosos sem aviso prévio." },
-                    { val: "correct", t: "B) Locais (como hospitais, praça central ou concessionárias) onde agressões, roubos, sequestros e assassinatos são totalmente proibidos para garantir a segurança dos jogadores." }
+                    { val: "A", t: "A) Áreas do mapa onde a polícia pode atirar para matar criminosos sem aviso prévio." },
+                    { val: "B", t: "B) Locais (como hospitais, praça central ou concessionárias) onde agressões, roubos, sequestros e assassinatos são totalmente proibidos para garantir a segurança dos jogadores." },
+                    { val: "C", t: "C) Zonas onde apenas VIPs podem entrar sem risco." },
+                    { val: "D", t: "D) Áreas controladas por Staff onde todos devem sair." }
                 ]
             },
             {
                 num: 13,
                 q: "Um jogador usa termos do jogo IC para insultar, difamar e expor fotos reais OOC (Out of Character) de outro jogador em canais públicos de bate-papo. Qual a conduta aplicável?",
+                correct: "A",
+                feedbackCorrect: "✅ Perfeito! Doxxing/assédio grave = banimento permanente imediato.",
+                feedbackWrong: "❌ Incorreto! A resposta correta é: A) Banimento imediato e permanente do Discord e do jogo por assédio pessoal, vazamento de dados privados (Doxxing) e toxicidade severa OOC.",
                 opts: [
-                    { val: "correct", t: "A) Banimento imediato e permanente do Discord e do jogo por assédio pessoal, vazamento de dados privados (Doxxing) e toxicidade severa OOC." },
-                    { val: "wrong", t: "B) Aplica-se uma advertência pedagógica leve para ele pedir desculpas públicas." }
+                    { val: "A", t: "A) Banimento imediato e permanente do Discord e do jogo por assédio pessoal, vazamento de dados privados (Doxxing) e toxicidade severa OOC." },
+                    { val: "B", t: "B) Aplica-se uma advertência pedagógica leve para ele pedir desculpas públicas." },
+                    { val: "C", t: "C) Suspender por 3 dias e dar segunda chance." },
+                    { val: "D", t: "D) Apenas remover a mensagem e avisar no privado." }
                 ]
             },
             {
                 num: 14,
                 q: "O que é a infração de 'FORÇAR RP' no FiveM?",
+                correct: "B",
+                feedbackCorrect: "✅ Excelente! Forçar RP é obrigar outro player a participar de simulação sem defesa.",
+                feedbackWrong: "❌ Incorreto! A resposta correta é: B) Obrigar outro jogador a aceitar ou participar de um cenário de simulação que não faça sentido biológico ou que retire completamente as opções dele de se defender legitimamente.",
                 opts: [
-                    { val: "wrong", t: "A) Prender criminosos na favela usando armamento letal pesado." },
-                    { val: "correct", t: "B) Obrigar outro jogador a aceitar ou participar de um cenário de simulação que não faça sentido biológico ou que retire completamente as opções dele de se defender legitimamente." }
+                    { val: "A", t: "A) Prender criminosos na favela usando armamento letal pesado." },
+                    { val: "B", t: "B) Obrigar outro jogador a aceitar ou participar de um cenário de simulação que não faça sentido biológico ou que retire completamente as opções dele de se defender legitimamente." },
+                    { val: "C", t: "C) Criar eventos com roteiro obrigatório para todos." },
+                    { val: "D", t: "D) Forçar RP é permitido entre amigos OOC." }
                 ]
             },
             {
                 num: 15,
                 q: "Um jogador utiliza o comando `/me` de forma irrealista para se desamarrar ou forçar uma ação impossível para obter vantagens IC (In Character - Dentro do Personagem). Que infração foi cometida?",
+                correct: "A",
+                feedbackCorrect: "✅ Correto! Powergaming é usar comandos de forma irrealista para vantagem IC.",
+                feedbackWrong: "❌ Incorreto! A resposta correta é: A) Powergaming / Uso indevido de comandos de simulação para forçar ações inexistentes.",
                 opts: [
-                    { val: "correct", t: "A) Powergaming / Uso indevido de comandos de simulação para forçar ações inexistentes." },
-                    { val: "wrong", t: "B) Metagaming informacional por comando." }
+                    { val: "A", t: "A) Powergaming / Uso indevido de comandos de simulação para forçar ações inexistentes." },
+                    { val: "B", t: "B) Metagaming informacional por comando." },
+                    { val: "C", t: "C) Uso de /me é sempre permitido livremente." },
+                    { val: "D", t: "D) Combat Storing avançado." }
                 ]
             }
         ];
@@ -1897,58 +1999,106 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             
             quizQuestions.forEach(item => {
                 html += `
-                    <div class="quiz-item border-b border-slate-900 pb-6 mb-6 last:border-b-0 last:pb-0 last:mb-0">
+                    <div class="quiz-item border-b border-slate-900 pb-6 mb-6 last:border-b-0 last:pb-0 last:mb-0" id="quiz-q${item.num}">
                         <p class="text-xs font-semibold text-emerald-400 font-orbitron">Questão ${item.num} de 15</p>
                         <h4 class="text-sm md:text-base font-bold text-slate-200 mt-1 mb-3">${item.q}</h4>
                         <div class="space-y-2">
-                            <label class="flex items-start gap-3 p-3 bg-slate-900/30 rounded-xl border border-slate-900 hover:border-emerald-500/30 cursor-pointer text-xs md:text-sm">
+                            <label class="flex items-start gap-3 p-3 bg-slate-900/30 rounded-xl border border-slate-900 hover:border-emerald-500/30 cursor-pointer text-xs md:text-sm option-label" onclick="checkAnswer(${item.num}, '${item.correct}')">
                                 <input type="radio" name="q${item.num}" value="${item.opts[0].val}" class="mt-0.5 text-emerald-600 focus:ring-emerald-500">
                                 <span>${item.opts[0].t}</span>
                             </label>
-                            <label class="flex items-start gap-3 p-3 bg-slate-900/30 rounded-xl border border-slate-900 hover:border-emerald-500/30 cursor-pointer text-xs md:text-sm">
+                            <label class="flex items-start gap-3 p-3 bg-slate-900/30 rounded-xl border border-slate-900 hover:border-emerald-500/30 cursor-pointer text-xs md:text-sm option-label" onclick="checkAnswer(${item.num}, '${item.correct}')">
                                 <input type="radio" name="q${item.num}" value="${item.opts[1].val}" class="mt-0.5 text-emerald-600 focus:ring-emerald-500">
                                 <span>${item.opts[1].t}</span>
                             </label>
+                            <label class="flex items-start gap-3 p-3 bg-slate-900/30 rounded-xl border border-slate-900 hover:border-emerald-500/30 cursor-pointer text-xs md:text-sm option-label" onclick="checkAnswer(${item.num}, '${item.correct}')">
+                                <input type="radio" name="q${item.num}" value="${item.opts[2].val}" class="mt-0.5 text-emerald-600 focus:ring-emerald-500">
+                                <span>${item.opts[2].t}</span>
+                            </label>
+                            <label class="flex items-start gap-3 p-3 bg-slate-900/30 rounded-xl border border-slate-900 hover:border-emerald-500/30 cursor-pointer text-xs md:text-sm option-label" onclick="checkAnswer(${item.num}, '${item.correct}')">
+                                <input type="radio" name="q${item.num}" value="${item.opts[3].val}" class="mt-0.5 text-emerald-600 focus:ring-emerald-500">
+                                <span>${item.opts[3].t}</span>
+                            </label>
                         </div>
+                        <div id="feedback-q${item.num}" class="hidden mt-3 p-3 rounded-lg text-sm font-semibold"></div>
                     </div>
                 `;
             });
 
             html += `
-                <div class="pt-4 border-t border-slate-900 text-center">
+                <div class="pt-4 border-t border-slate-900 text-center space-y-3">
                     <button onclick="calculateQuizScore()" class="px-6 py-2.5 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold text-sm rounded-xl tracking-wide transition-all shadow-lg shadow-emerald-500/25">
                         Calcular Resultado
                     </button>
                     <div id="quiz-result" class="hidden mt-4 p-4 rounded-xl font-bold border"></div>
+                    <div id="wrong-answers-summary" class="hidden mt-4 p-4 rounded-xl font-semibold border-yellow-800/40 bg-yellow-950/40 text-yellow-300 text-left text-sm space-y-2"></div>
                 </div>
             `;
 
             container.innerHTML = html;
         }
 
+        function checkAnswer(questionNum, correctAnswer) {
+            const selected = document.querySelector(`input[name="q${questionNum}"]:checked`);
+            if (!selected) return;
+        }
+
         function calculateQuizScore() {
             let correctCount = 0;
+            let wrongQuestions = [];
+            
             quizQuestions.forEach(item => {
                 const selected = document.querySelector(`input[name="q${item.num}"]:checked`);
-                if (selected && selected.value === 'correct') {
+                if (selected && selected.value === item.correct) {
                     correctCount++;
+                } else if (selected) {
+                    wrongQuestions.push({
+                        num: item.num,
+                        question: item.q,
+                        wrongAnswer: selected.value,
+                        correctAnswer: item.correct,
+                        correctText: item.opts.find(o => o.val === item.correct).t
+                    });
                 }
             });
 
             const resultDiv = document.getElementById('quiz-result');
+            const wrongDiv = document.getElementById('wrong-answers-summary');
+            
             resultDiv.classList.remove('hidden', 'bg-red-950/40', 'text-red-400', 'bg-emerald-950/40', 'text-emerald-400', 'bg-yellow-950/40', 'text-yellow-400');
             resultDiv.classList.add('p-4', 'mt-4', 'rounded-xl');
 
             if (correctCount >= 12) {
                 resultDiv.innerHTML = `🏆 Excelente! ${correctCount}/15 Acertos. O candidato foi APROVADO na teoria técnica de moderação.`;
                 resultDiv.classList.add('bg-emerald-950/40', 'border-emerald-800/40', 'text-emerald-400');
+                showWrongAnswers(wrongQuestions);
             } else if (correctCount >= 8) {
                 resultDiv.innerHTML = `⚠️ Regular! ${correctCount}/15 Acertos. O candidato precisa repassar as definições de regras com o mentor antes de refazer o teste.`;
                 resultDiv.classList.add('bg-yellow-950/40', 'border-yellow-800/40', 'text-yellow-400');
+                showWrongAnswers(wrongQuestions);
             } else {
                 resultDiv.innerHTML = `❌ Reprovado! Apenas ${correctCount}/15 Acertos. Recomendado repasse conceitual completo das regras de Roleplay.`;
                 resultDiv.classList.add('bg-red-950/40', 'border-red-800/40', 'text-red-400');
+                showWrongAnswers(wrongQuestions);
             }
+        }
+
+        function showWrongAnswers(wrongQuestions) {
+            const wrongDiv = document.getElementById('wrong-answers-summary');
+            if (wrongQuestions.length === 0) {
+                wrongDiv.classList.add('hidden');
+                return;
+            }
+            
+            let content = '<strong class="block mb-2">❌ Questões Erradas:</strong>';
+            wrongQuestions.forEach((wrong, idx) => {
+                content += `<div class="mb-3 p-2 bg-slate-900/50 rounded">
+                    <strong>Q${wrong.num}:</strong> ${wrong.question}
+                </div>`;
+            });
+            
+            wrongDiv.innerHTML = content;
+            wrongDiv.classList.remove('hidden');
         }
 
         // Discord Template Generator Logic (EXATAMENTE COMO O PRIMEIRO)
